@@ -12,7 +12,7 @@ let a = [
   let a1 = new Map();
   a.forEach((i) =>
 {
-    a1.set(i.userID , i)
+    a1.set(i.userID ,i )
 });
 
 // console.log(a1);
@@ -20,7 +20,7 @@ let a = [
 let a2 = new Map();
 b.forEach((i) =>
 {
-  a2.set(i.userID , i)
+  a2.set(i.userID ,i )
 });
 
 // console.log(a2);
