@@ -12,7 +12,7 @@ let a = [
   let a1 = new Map();
   a.forEach((i) =>
 {
-    a1.set(i.userID , i.Name)
+    a1.set(i.userID , i)
 });
 
 // console.log(a1);
@@ -20,15 +20,24 @@ let a = [
 let a2 = new Map();
 a.forEach((i) =>
 {
-  a2.set(i.userID , i.DateOfBirth)
+  a2.set(i.userID , i)
 });
 
 // console.log(a2);
 
-let marge = [...a1 , ...a2]
-console.log(marge);
+let marge = new Set([...a1.keys() , ...a2.keys()]) 
+// console.log(marge);
 
-let finallist = [];
+let donelist = [];
+marge.forEach(userID => {
+    const aData = a1.get(userID);
+    const bData = a2.get(userID);
+  
+   donelist.push({
+      userID: userID,
+      Name: aData ? aData.Name : null,
+      DateOfBirth:toString(bData) ? bData.DateOfBirth : null
+    });
+  });
 
-let 
-
+  console.log(donelist);
