@@ -5,8 +5,8 @@ let a = [
   ]
   
  let b = [
-    { userID: 5, DateOfBirth: "11-02-1995" },
-    { userID: 6, DateOfBirth: "22-09-1990" }
+    { userID: 5, Birth: "11-02-1995" },
+    { userID: 6, Birth: "22-09-1990" }
   ]
 
   let a1 = new Map();
@@ -18,7 +18,7 @@ let a = [
 // console.log(a1);
 
 let a2 = new Map();
-a.forEach((i) =>
+b.forEach((i) =>
 {
   a2.set(i.userID , i)
 });
@@ -31,12 +31,14 @@ let marge = new Set([...a1.keys() , ...a2.keys()])
 let donelist = [];
 marge.forEach(userID => {
     const aData = a1.get(userID);
+    // console.log(aData);
     const bData = a2.get(userID);
+    // console.log(bData);
   
    donelist.push({
       userID: userID,
       Name: aData ? aData.Name : null,
-      DateOfBirth:toString(bData) ? bData.DateOfBirth : null
+      DateOfBirth:bData ? bData.Birth : null
     });
   });
 
